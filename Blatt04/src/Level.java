@@ -1,6 +1,0 @@
-
-public enum Level {
-
-	NOVICE, EXPERIENCED, EXPERT, MASTER, GRANDMASTER
-	
-}
