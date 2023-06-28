@@ -36,6 +36,12 @@ public class Klapptafel extends Application {
 				if (zielTextArr[i] != labels[i].getText().charAt(0)) {
 					next(labels[i]);
 				}
+
+			}
+			for (int i = zielTextArr.length; i < labels.length; i++) {
+				if (' ' != labels[i].getText().charAt(0)) {
+					next(labels[i]);
+				}
 			}
 
 			StringBuilder sb = new StringBuilder();
@@ -43,7 +49,7 @@ public class Klapptafel extends Application {
 				sb.append(label.getText());
 			}
 			newText = sb.toString();
-			
+
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
@@ -68,7 +74,8 @@ public class Klapptafel extends Application {
 		labels = new Label[10];
 
 		for (int i = 0; i < labels.length; i++) {
-			labels[i] = new Label("Ö");
+			labels[i] = new Label(" ");
+			labels[i].setMinWidth(10);
 		}
 
 		labelsBox.getChildren().addAll(labels);
